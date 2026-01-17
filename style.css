@@ -1015,3 +1015,386 @@ footer p {
         top: 80px;
     }
 }
+
+/* Обращение к гостям */
+.greeting {
+    position: relative;
+    padding: 70px 0;
+    background-color: #f9f5f0;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.greeting-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.greeting-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(249, 245, 240, 0.9) 0%, rgba(249, 245, 240, 0.95) 100%);
+    z-index: 2;
+}
+
+.greeting-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+.greeting-icon {
+    font-size: 2.5rem;
+    color: #d4b89c;
+    margin-bottom: 25px;
+    animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.greeting-content h2 {
+    font-size: 2rem;
+    color: #5a4c3e;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.greeting-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #d4b89c;
+}
+
+.greeting-text {
+    font-size: 1.15rem;
+    color: #7a6a5a;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.greeting-signature {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px dashed #e8d9c8;
+    font-size: 1.2rem;
+    color: #5a4c3e;
+    font-style: italic;
+}
+
+.signature-names {
+    font-size: 1.4rem;
+    color: #b89474;
+    font-weight: 500;
+    margin-top: 8px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* Адаптивность для обращения */
+@media screen and (max-width: 768px) {
+    .greeting {
+        padding: 50px 0;
+        min-height: auto;
+    }
+    
+    .greeting-bg {
+        background-attachment: scroll;
+    }
+    
+    .greeting-content {
+        padding: 30px 20px;
+    }
+    
+    .greeting-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .greeting-text {
+        font-size: 1.05rem;
+        padding: 0 5px;
+    }
+    
+    .greeting-signature {
+        font-size: 1.1rem;
+        margin-top: 25px;
+    }
+    
+    .signature-names {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .greeting-content {
+        padding: 25px 15px;
+    }
+    
+    .greeting-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .greeting-text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Блок приглашения в чат в свадебном стиле */
+.wedding-chat {
+    background: linear-gradient(135deg, #f9f5f0 0%, #f5eee5 100%);
+    border-radius: 16px;
+    padding: 30px 25px;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e8d9c8;
+    box-shadow: 0 10px 30px rgba(90, 76, 62, 0.08);
+}
+
+.wedding-chat::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px solid rgba(212, 184, 156, 0.15);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.chat-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.chat-flower {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,20 Q60,10 80,15 Q90,25 85,45 Q80,65 60,70 Q40,75 30,60 Q20,45 25,30 Q30,15 40,20 Q45,22 50,20 Z' fill='%23d4b89c'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.chat-flower-1 {
+    top: 15px;
+    left: 15px;
+    transform: rotate(-15deg);
+}
+
+.chat-flower-2 {
+    bottom: 15px;
+    right: 15px;
+    transform: rotate(15deg);
+}
+
+.chat-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.chat-icon {
+    font-size: 2.5rem;
+    color: #b89474;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #e8d9c8;
+    box-shadow: 0 5px 15px rgba(184, 148, 116, 0.1);
+}
+
+.chat-content h3 {
+    font-size: 1.6rem;
+    color: #5a4c3e;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.chat-content p {
+    color: #7a6a5a;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.elegant-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #d4b89c, #b89474);
+    color: white;
+    padding: 16px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    user-select: none;
+    touch-action: manipulation;
+    box-shadow: 0 5px 15px rgba(184, 148, 116, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.elegant-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.7s;
+}
+
+.elegant-btn:hover::before {
+    left: 100%;
+}
+
+.elegant-btn:active {
+    transform: scale(0.98);
+    background: linear-gradient(135deg, #b89474, #a07d5f);
+}
+
+.chat-link {
+    min-width: 220px;
+    margin: 0 auto;
+}
+
+.chat-note {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #e8d9c8;
+    font-size: 0.9rem;
+    color: #9c8a75;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.chat-note i {
+    color: #b89474;
+    font-size: 0.9rem;
+}
+
+/* Кнопки в сообщении об успехе */
+.success-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Адаптивность для чата */
+@media screen and (max-width: 480px) {
+    .wedding-chat {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .chat-icon {
+        font-size: 2rem;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .chat-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .chat-content p {
+        font-size: 0.95rem;
+        padding: 0 5px;
+    }
+    
+    .elegant-btn {
+        padding: 14px 25px;
+        font-size: 1rem;
+        min-width: 200px;
+    }
+    
+    .chat-flower {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .wedding-chat {
+        padding: 20px 15px;
+    }
+    
+    .chat-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .chat-content p {
+        font-size: 0.9rem;
+    }
+    
+    .elegant-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        min-width: 180px;
+    }
+    
+    .chat-link {
+        min-width: auto;
+        width: 100%;
+    }
+}
